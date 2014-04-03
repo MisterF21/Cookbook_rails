@@ -1,0 +1,8 @@
+<h1> Update <%= @recipe.name %> </h1>
+
+<form class="smallWrapper" action="/recipes/update/<%= @recipe.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <%= render('form') %>
+  <br />
+  <button class="btn btn-success">Update Recipe</button>
+</form>
