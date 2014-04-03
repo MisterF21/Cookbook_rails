@@ -1,12 +1,16 @@
-<h1>Here are all your tags:</h1>
+<h1>Here are all your tags and their corresponding recipes:</h1>
 
-<ul>
+ <ul>
   <% @tags.each do |tag| %>
   <li><%= tag.name %></li>
+    <ul>
+      <% tag.recipes.each do |recipe| %>
+        <li><a href ="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
+        <% end %>
+    </ul>
+    <% end %>
+  </ul>
 
-  <% end %>
-
-</ul>
 
 <a href="/recipes/"><button>Back to Recipe list</button></a>
 <a href="/view/new"><button>Create a new tag?</button></a>

@@ -2,6 +2,13 @@
 <h3><%= @recipe.name %></h3>
 <h3><%= @recipe.content %></h3>
 
+<p>Tags for this recipe:</p>
+<ul>
+  <% @recipe.tags.each do |tag| %>
+  <li><%= tag.name %></li>
+  <% end %>
+</ul>
+
 <a data-method="get" href="/recipes/update/<%= @recipe.id %>"><button class="btn btn-primary"> Update recipe</button></a>
 
 <p><a href="/recipes/<%= @recipe.id %>"

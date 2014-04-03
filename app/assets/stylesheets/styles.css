@@ -1,0 +1,5 @@
+li#no_dots {
+list-style-type:none;
+padding: 5px;
+font-size: 150%;
+}

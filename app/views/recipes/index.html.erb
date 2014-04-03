@@ -1,11 +1,11 @@
 <h1>Welcome to the Recipe Index</h1>
-
+<p class="lead">
 <ul>
 <% @recipes.each do |recipe| %>
-  <li> <a href ="/recipes/<%= recipe.id %>"><%= recipe.name %></a> </li>
+  <li id="no_dots"> <a href ="/recipes/<%= recipe.id %>"><%= recipe.name %></a> </li>
   <% end %>
 </ul>
-
+</p>
 
 
 <a href="/recipes/new"><button>Make a new Recipe! :)</button></a>

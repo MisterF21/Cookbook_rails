@@ -16,7 +16,13 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new(params[:recipe])
+
     if @recipe.save
+      @tag_ids = params[:tag_ids]
+      @tag_ids.each do |id|
+      @tag = Tag.find(id)
+      @recipe.tags << @tag
+    end
       redirect_to('/recipes')
     else
       render('recipes/new.html.erb')
@@ -30,13 +36,7 @@ class RecipesController < ApplicationController
 
   def update
     Recipe.find(params[:id]).update(params[:recipe])
-
     redirect_to('/recipes')
-    # if @recipe.save
-    #   redirect_to('/recipes')
-    # else
-    #   render('recipes/new.html.erb')
-    # end
   end
 
   def destroy

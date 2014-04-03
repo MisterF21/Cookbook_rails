@@ -4,4 +4,8 @@
 <label for="recipe_content">Content</label>
 <textarea class = "form-control" rows= "3" id="content" name="recipe[content]" type="text"></textarea>
 
-<!-- <select class="form-control" id="tagId" name="r" -->
+<% Tag.all.each do |tag| %>
+&nbsp;
+ <input type="checkbox" name="tag_ids[]" value="<%= tag.id %>"><%= tag.name %>
+
+ <% end %>
